@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Organizer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geo:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="app-icon">
+                    <span class="material-icons-round">bookmark</span>
+                </div>
+                <div class="app-title">
+                    <h1>linkr</h1>
+                    <span class="app-subtitle">Save & organize links</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Add URL Form -->
+            <section class="add-url-section">
+                <div class="form-group">
+                    <label class="form-label">URL</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="urlInput" class="form-input" placeholder="https://example.com">
+                        <button id="getCurrentUrl" class="input-action-btn" title="Get current page">
+                            <span class="material-icons-round">tab</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" id="titleInput" class="form-input" placeholder="Optional title">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <div class="select-wrapper">
+                        <select id="categorySelect" class="form-select">
+                            <option value="">Choose category</option>
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="research">Research</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="news">News</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="social">Social</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <button id="addCategory" class="select-action-btn" title="Add category">
+                            <span class="material-icons-round">add</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="saveUrl" class="primary-btn">
+                    <span class="material-icons-round">add</span>
+                    <span>SAVE URL</span>
+                </button>
+            </section>
+
+            <!-- Search -->
+            <section class="search-section">
+                <div class="search-wrapper">
+                    <div class="search-input-wrapper">
+                        <span class="material-icons-round search-icon">search</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                    </div>
+                    <div class="filter-wrapper">
+                        <select id="filterCategory" class="filter-select">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- URLs List -->
+            <section class="urls-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>S A V E D  L I N K S</h2>
+                        <span id="urlsCount" class="count-badge">0</span>
+                    </div>
+                    <div class="section-actions">
+                        <button id="exportUrls" class="action-btn" title="Export">
+                            <span class="material-icons-round">download</span>
+                        </button>
+                        <button id="clearAll" class="action-btn danger" title="Clear all">
+                            <span class="material-icons-round">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="urlsList" class="urls-list">
+                    <!-- URLs loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalUrls">0</div>
+                    <div class="stat-label">Links</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCategories">0</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>All rights reserved Linkr 2025</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="categoryModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Category</h3>
+                <button id="closeModal" class="modal-close-btn">
+                    <span class="material-icons-round">close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Category Name</label>
+                    <input type="text" id="newCategoryInput" class="form-input" placeholder="Enter name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelCategory" class="secondary-btn">Cancel</button>
+                <button id="confirmCategory" class="primary-btn">
+                    <span class="material-icons-round">add</span>
+                    <span>Add</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

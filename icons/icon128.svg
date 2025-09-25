@@ -1,0 +1,8 @@
+<!-- Simple SVG icon for 128px -->
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" fill="#667eea" rx="16"/>
+  <path d="M32 48h64v8H32v-8zm0 16h64v8H32v-8zm0 16h48v8H32v-8z" fill="white"/>
+  <circle cx="24" cy="52" r="4" fill="white"/>
+  <circle cx="24" cy="68" r="4" fill="white"/>
+  <circle cx="24" cy="84" r="4" fill="white"/>
+</svg>

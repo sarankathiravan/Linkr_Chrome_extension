@@ -1,0 +1,8 @@
+<!-- Simple SVG icon for 16px -->
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" fill="#667eea" rx="2"/>
+  <path d="M4 6h8v1H4V6zm0 2h8v1H4V8zm0 2h6v1H4v-1z" fill="white"/>
+  <circle cx="3" cy="6.5" r="0.5" fill="white"/>
+  <circle cx="3" cy="8.5" r="0.5" fill="white"/>
+  <circle cx="3" cy="10.5" r="0.5" fill="white"/>
+</svg>

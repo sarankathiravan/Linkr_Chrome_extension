@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "URL Organizer",
+  "version": "1.0",
+  "description": "Save and categorize URLs with an elegant interface",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "URL Organizer"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
