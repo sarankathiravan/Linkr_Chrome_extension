@@ -1,8 +1,0 @@
-<!-- Simple SVG icon for 48px -->
-<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <rect width="48" height="48" fill="#667eea" rx="6"/>
-  <path d="M12 18h24v3H12v-3zm0 6h24v3H12v-3zm0 6h18v3H12v-3z" fill="white"/>
-  <circle cx="9" cy="19.5" r="1.5" fill="white"/>
-  <circle cx="9" cy="25.5" r="1.5" fill="white"/>
-  <circle cx="9" cy="31.5" r="1.5" fill="white"/>
-</svg>

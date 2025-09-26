@@ -56,6 +56,7 @@ body {
     overflow: hidden;
 }
 
+/* App Container */
 .app-container {
     background: 
         repeating-linear-gradient(
@@ -74,6 +75,7 @@ body {
     overflow: hidden;
 }
 
+/* Header */
 .app-header {
     background: #111111;
     padding: 16px 20px;
@@ -118,6 +120,7 @@ body {
     animation: shimmer 1.5s ease-in-out infinite;
 }
 
+/* Shimmer keyframe animation */
 @keyframes shimmer {
     0% {
         filter: brightness(1) drop-shadow(0 0 0 rgba(255, 255, 255, 0));
@@ -130,10 +133,11 @@ body {
     }
 }
 
+/* HEADER TITLE - "URL Organizer" main title */
 .app-title h1 {
-    font-family: 'Poiret One';
-    font-size: 25px;
-    font-weight: 650;
+    font-family: 'Poiret One'; /* Change this line to customize header title font */
+    font-size: 25px; /* Header title size */
+    font-weight: 650; /* Header title weight */
     color: #ffffff;
     margin-bottom: 2px;
     cursor: pointer;
@@ -146,6 +150,7 @@ body {
     transform: scale(1.02);
 }
 
+/* Text shimmer animation */
 @keyframes textShimmer {
     0% {
         color: #ffffff;
@@ -161,19 +166,22 @@ body {
     }
 }
 
+/* HEADER SUBTITLE - "Save & organize links" subtitle */
 .app-subtitle {
-    font-family: 'SUSE';
-    font-size: 14px;
-    font-weight: inherit;
+    font-family: 'SUSE'; /* Change this line to customize header subtitle font */
+    font-size: 14px; /* Header subtitle size */
+    font-weight: inherit; /* Header subtitle weight */
     color: #888888;
 }
 
+/* Main Content */
 .app-main {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
 }
 
+/* Sections */
 section {
     margin-bottom: 24px;
 }
@@ -208,19 +216,22 @@ section {
     pointer-events: none;
 }
 
+/* Form Styles */
 .form-group {
     margin-bottom: 12px;
 }
 
+/* FORM LABELS - "URL", "Title", "Category" labels */
 .form-label {
     display: block;
-    font-family: 'Jost';
-    font-size: 15px;
-    font-weight: 300;
+    font-family: 'Jost'; /* Change this line to customize form labels font */
+    font-size: 15px; /* Form labels size */
+    font-weight: 300; /* Form labels weight */
     color: #cccccc;
     margin-bottom: 4px;
 }
 
+/* FORM INPUTS - Text inputs and dropdown selects */
 .form-input,
 .form-select {
     width: 100%;
@@ -230,8 +241,8 @@ section {
     border: 1px solid #333333;
     border-radius: 4px;
     color: #ffffff;
-    font-size: 13px;
-    font-family: 'Montserrat';
+    font-size: 13px; /* Input text size */
+    font-family: 'Montserrat'; /* Change this line to customize input text font */
 }
 
 .form-input:focus,
@@ -241,11 +252,13 @@ section {
     background: #111111;
 }
 
+/* PLACEHOLDER TEXT - "https://example.com", "Optional title", etc. */
 .form-input::placeholder {
     color: #666666;
-    font-family: inherit;
+    font-family: inherit; /* Change this line to customize placeholder text font */
 }
 
+/* Input Wrappers */
 .input-wrapper,
 .select-wrapper {
     position: relative;
@@ -309,6 +322,8 @@ section {
     padding-right: 40px;
 }
 
+/* Buttons */
+/* BUTTON TEXT - "Save URL", "Cancel", "Add" button text */
 .primary-btn,
 .secondary-btn {
     display: flex;
@@ -318,9 +333,9 @@ section {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    font-family: 'Sarpanch';
-    font-size: 15px;
-    font-weight: 500;
+    font-family: 'Sarpanch'; /* Change this line to customize button text font */
+    font-size: 15px; /* Button text size */
+    font-weight: 500; /* Button text weight */
     cursor: pointer;
     height: 36px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -445,6 +460,7 @@ section {
     box-shadow: 0 4px 12px rgba(204, 0, 0, 0.4);
 }
 
+/* Search Section */
 .search-wrapper {
     display: flex;
     gap: 8px;
@@ -464,6 +480,7 @@ section {
     font-size: 14px;
 }
 
+/* SEARCH INPUT - Search box text */
 .search-input {
     padding-left: 36px;
     height: 32px;
@@ -471,8 +488,8 @@ section {
     border: 1px solid #222222;
     border-radius: 4px;
     color: #ffffff;
-    font-family: inherit;
-    font-size: 13px;
+    font-family: inherit; /* Change this line to customize search input font */
+    font-size: 13px; /* Search input text size */
     width: 100%;
 }
 
@@ -481,23 +498,26 @@ section {
     border-color: #333333;
 }
 
+/* SEARCH PLACEHOLDER - "Search..." placeholder text */
 .search-input::placeholder {
     color: #666666;
-    font-family: 'inherit';
+    font-family: 'inherit'; /* Change this line to customize search placeholder font */
 }
 
 .filter-wrapper {
     min-width: 80px;
 }
 
+/* FILTER DROPDOWN - "All" categories filter dropdown */
 .filter-select {
     height: 32px;
-    font-family: inherit;
-    font-size: 12px;
+    font-family: inherit; /* Change this line to customize filter dropdown font */
+    font-size: 12px; /* Filter dropdown text size */
     background: #111111;
     border: 1px solid #222222;
 }
 
+/* URLs Section */
 .section-header {
     display: flex;
     align-items: center;
@@ -511,19 +531,21 @@ section {
     gap: 8px;
 }
 
+/* SECTION TITLE - "Saved Links" heading */
 .section-title h2 {
-    font-family: 'montserrat';
-    font-size: 13px;
-    font-weight: 300;
+    font-family: 'montserrat'; /* Change this line to customize section title font */
+    font-size: 13px; /* Section title size */
+    font-weight: 300; /* Section title weight */
     color: #ffffff;
 }
 
+/* COUNT BADGE - Number showing count of saved links */
 .count-badge {
     background: #333333;
     color: #ffffff;
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize count badge font */
+    font-size: 10px; /* Count badge text size */
+    font-weight: inherit; /* Count badge text weight */
     padding: 2px 6px;
     border-radius: 10px;
     min-width: 16px;
@@ -535,6 +557,7 @@ section {
     gap: 4px;
 }
 
+/* URLs List */
 .urls-list {
     max-height: 200px;
     overflow-y: auto;
@@ -603,22 +626,24 @@ section {
     min-width: 0;
 }
 
+/* URL TITLE - Title/name of each saved URL */
 .url-title {
-    font-family: 'Jost', 'Inter', 'Roboto', system-ui, sans-serif;
-    font-size: 12px;
-    font-weight: 250;
+    font-family: 'Jost', 'Inter', 'Roboto', system-ui, sans-serif; /* CHANGE THIS for URL titles */
+    font-size: 12px; /* URL title size */
+    font-weight: 250; /* URL title weight */
     color: #ffffff;
     margin-bottom: 4px;
     word-break: break-word;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; /* URL title letter spacing */
 }
 
+/* URL LINK - The actual URL address text */
 .url-link {
     color: #888888;
     text-decoration: none;
-    font-family: 'montserrat';
-    font-size: 11px;
-    font-weight: 400;
+    font-family: 'montserrat'; /* Change this line to customize URL link font */
+    font-size: 11px; /* URL link text size */
+    font-weight: 400; /* URL link text weight */
     word-break: break-all;
 }
 
@@ -641,34 +666,38 @@ section {
     font-size: 12px;
 }
 
+/* URL META - Container for category and date info */
 .url-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize meta info font */
+    font-size: 10px; /* Meta info text size */
+    font-weight: inherit; /* Meta info text weight */
 }
 
+/* URL CATEGORY - Category badge (Work, Personal, etc.) */
 .url-category {
     background: #333333;
     color: #ffffff;
     padding: 2px 6px;
     border-radius: 10px;
-    font-family: 'Geo', 'Segoe UI Semibold', 'Inter', 'Roboto Medium', system-ui, sans-serif;
-    font-size: 9px;
-    font-weight: 400;
+    font-family: 'Geo', 'Segoe UI Semibold', 'Inter', 'Roboto Medium', system-ui, sans-serif; /* CHANGE THIS for categories */
+    font-size: 9px; /* Category badge text size */
+    font-weight: 400; /* Category badge text weight */
     text-transform: capitalize;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.4px; /* Category badge letter spacing */
 }
 
+/* URL DATE - Date when URL was saved */
 .url-date {
     color: #666666;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize date text font */
+    font-size: inherit; /* Date text size (inherits from .url-meta) */
+    font-weight: inherit; /* Date text weight */
 }
 
+/* Footer Stats */
 .app-footer {
     background: #111111;
     border-top: 1px solid #222222;
@@ -692,30 +721,34 @@ section {
     padding: 4px 8px;
 }
 
+/* COPYRIGHT TEXT - "All rights reserved Linkr 2025" */
 .footer-copyright {
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize copyright text font */
+    font-size: 10px; /* Copyright text size */
+    font-weight: inherit; /* Copyright text weight */
     color: #666666;
     text-align: center;
     margin-top: 2px;
 }
 
+/* FOOTER STATS VALUES - Numbers in footer (0, 0) */
 .stat-value {
-    font-family: 'montserrat';
-    font-size: 16px;
-    font-weight: 600;
+    font-family: 'montserrat'; /* Change this line to customize footer numbers font */
+    font-size: 16px; /* Footer numbers size */
+    font-weight: 600; /* Footer numbers weight */
     color: #ffffff;
     margin-bottom: 1px;
 }
 
+/* FOOTER STATS LABELS - "Links", "Categories" labels */
 .stat-label {
-    font-family: inherit;
-    font-size: 9px;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize footer labels font */
+    font-size: 9px; /* Footer labels size */
+    font-weight: inherit; /* Footer labels weight */
     color: #888888;
 }
 
+/* Modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -746,10 +779,11 @@ section {
     border-bottom: 1px solid #222222;
 }
 
+/* MODAL TITLE - "Add Category" popup title */
 .modal-title {
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 500;
+    font-family: inherit; /* Change this line to customize modal title font */
+    font-size: 13px; /* Modal title size */
+    font-weight: 500; /* Modal title weight */
     color: #ffffff;
 }
 
@@ -783,11 +817,13 @@ section {
     justify-content: flex-end;
 }
 
+/* Empty State */
+/* EMPTY STATE - Text shown when no URLs are saved */
 .empty-state {
     text-align: center;
     padding: 32px 16px;
     color: #666666;
-    font-family: inherit;
+    font-family: inherit; /* Change this line to customize empty state text font */
 }
 
 .empty-state .material-icons-round {
@@ -796,13 +832,15 @@ section {
     margin-bottom: 12px;
 }
 
+/* EMPTY STATE MESSAGE - Detailed message text */
 .empty-state p {
-    font-family: inherit;
-    font-size: 12px;
-    font-weight: inherit;
+    font-family: inherit; /* Change this line to customize empty state message font */
+    font-size: 12px; /* Empty state message size */
+    font-weight: inherit; /* Empty state message weight */
     line-height: 1.4;
 }
 
+/* Simple animations */
 .url-item {
     transition: all 0.15s ease;
 }

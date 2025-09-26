@@ -7,25 +7,19 @@ class URLOrganizer {
     }
 
     initializeEventListeners() {
-        // Save URL functionality
         document.getElementById('saveUrl').addEventListener('click', () => this.saveUrl());
         document.getElementById('getCurrentUrl').addEventListener('click', () => this.getCurrentPageUrl());
         
-        // Search and filter
         document.getElementById('searchInput').addEventListener('input', (e) => this.filterUrls(e.target.value));
         document.getElementById('filterCategory').addEventListener('change', (e) => this.filterByCategory(e.target.value));
         
-        // Category management
         document.getElementById('addCategory').addEventListener('click', () => this.showCategoryModal());
         document.getElementById('confirmCategory').addEventListener('click', () => this.addNewCategory());
         document.getElementById('cancelCategory').addEventListener('click', () => this.hideCategoryModal());
         document.getElementById('closeModal').addEventListener('click', () => this.hideCategoryModal());
         
-        // URL management actions
         document.getElementById('exportUrls').addEventListener('click', () => this.exportUrls());
         document.getElementById('clearAll').addEventListener('click', () => this.clearAllUrls());
-        
-        // Enter key handling
         document.getElementById('urlInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.saveUrl();
         });
@@ -33,14 +27,11 @@ class URLOrganizer {
             if (e.key === 'Enter') this.addNewCategory();
         });
 
-        // Modal overlay click to close
         document.getElementById('categoryModal').addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-overlay')) {
                 this.hideCategoryModal();
             }
         });
-
-        // Event delegation for dynamically created URL items
         document.getElementById('urlsList').addEventListener('click', (e) => {
             const urlItem = e.target.closest('.url-item');
             if (!urlItem) return;
@@ -49,17 +40,14 @@ class URLOrganizer {
             const urlData = this.savedUrls.find(url => url.id === urlId);
             if (!urlData) return;
 
-            // Handle copy button clicks
             if (e.target.closest('.copy-btn')) {
                 e.preventDefault();
                 this.copyUrl(urlData.url);
             }
-            // Handle delete button clicks
             else if (e.target.closest('.delete-btn')) {
                 e.preventDefault();
                 this.deleteUrl(urlId);
             }
-            // Handle URL link clicks
             else if (e.target.closest('.url-link')) {
                 e.preventDefault();
                 this.openUrl(urlId, urlData.url);
@@ -91,7 +79,6 @@ class URLOrganizer {
             if (tab) {
                 document.getElementById('urlInput').value = tab.url;
                 document.getElementById('titleInput').value = tab.title || '';
-                // Add subtle animation to show the fields were filled
                 const urlInput = document.getElementById('urlInput');
                 urlInput.style.borderColor = 'var(--accent-primary)';
                 setTimeout(() => {
@@ -109,7 +96,6 @@ class URLOrganizer {
             new URL(url);
             return true;
         } catch {
-            // Try adding https:// if no protocol
             try {
                 new URL('https://' + url);
                 return 'https://' + url;
@@ -134,7 +120,6 @@ class URLOrganizer {
             return;
         }
 
-        // Validate and fix URL
         const validatedUrl = this.validateUrl(url);
         if (!validatedUrl) {
             this.showNotification('Please enter a valid URL', 'error');
@@ -146,14 +131,12 @@ class URLOrganizer {
             url = validatedUrl;
         }
 
-        // Check for duplicates
         const exists = this.savedUrls.find(item => item.url === url);
         if (exists) {
             this.showNotification('URL already saved', 'warning');
             return;
         }
 
-        // Create URL object
         const urlObject = {
             id: Date.now(),
             url: url,
@@ -164,23 +147,19 @@ class URLOrganizer {
             accessCount: 0
         };
 
-        // Add subtle save animation
         const saveBtn = document.getElementById('saveUrl');
         saveBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
             saveBtn.style.transform = '';
         }, 150);
 
-        // Save to storage
         this.savedUrls.unshift(urlObject);
         await this.saveToStorage();
 
-        // Clear inputs with animation
         urlInput.value = '';
         titleInput.value = '';
         categorySelect.value = '';
 
-        // Update UI
         this.displayUrls();
         this.updateStats();
         this.showNotification('URL saved successfully!', 'success');
@@ -205,7 +184,6 @@ class URLOrganizer {
     }
 
     async openUrl(id, url) {
-        // Update access statistics
         const urlObject = this.savedUrls.find(item => item.id === id);
         if (urlObject) {
             urlObject.accessCount++;
@@ -213,7 +191,6 @@ class URLOrganizer {
             await this.saveToStorage();
         }
 
-        // Open URL in new tab
         chrome.tabs.create({ url: url });
     }
 
@@ -318,7 +295,6 @@ class URLOrganizer {
         const modal = document.getElementById('categoryModal');
         modal.style.display = 'flex';
         document.getElementById('newCategoryInput').focus();
-        // Prevent body scroll
         document.body.style.overflow = 'hidden';
     }
 
@@ -326,7 +302,6 @@ class URLOrganizer {
         const modal = document.getElementById('categoryModal');
         modal.style.display = 'none';
         document.getElementById('newCategoryInput').value = '';
-        // Restore body scroll
         document.body.style.overflow = '';
     }
 
@@ -357,13 +332,11 @@ class URLOrganizer {
         const categorySelect = document.getElementById('categorySelect');
         const filterSelect = document.getElementById('filterCategory');
 
-        // Update main category select
         const currentValue = categorySelect.value;
         categorySelect.innerHTML = '<option value="">Choose category</option>' +
             this.categories.map(cat => `<option value="${cat}">${cat.charAt(0).toUpperCase() + cat.slice(1)}</option>`).join('');
         categorySelect.value = currentValue;
 
-        // Update filter select
         const currentFilterValue = filterSelect.value;
         filterSelect.innerHTML = '<option value="">All</option>' +
             this.categories.map(cat => `<option value="${cat}">${cat.charAt(0).toUpperCase() + cat.slice(1)}</option>`).join('');
@@ -377,7 +350,6 @@ class URLOrganizer {
         document.getElementById('totalUrls').textContent = totalUrls;
         document.getElementById('totalCategories').textContent = totalCategories;
         
-        // Update the count badge in the section header
         const urlsCount = document.getElementById('urlsCount');
         if (urlsCount) {
             urlsCount.textContent = totalUrls;
@@ -421,7 +393,6 @@ class URLOrganizer {
     }
 
     showNotification(message, type = 'info') {
-        // Create notification element
         const notification = document.createElement('div');
         const colors = {
             success: '#ffffff',
@@ -451,13 +422,11 @@ class URLOrganizer {
         
         document.body.appendChild(notification);
         
-        // Animate in
         requestAnimationFrame(() => {
             notification.style.opacity = '1';
             notification.style.transform = 'translateX(0) scale(1)';
         });
         
-        // Remove after 3 seconds
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateX(100%) scale(0.9)';
@@ -470,7 +439,6 @@ class URLOrganizer {
     }
 }
 
-// Initialize the application when DOM is loaded
 let urlOrganizer;
 document.addEventListener('DOMContentLoaded', () => {
     urlOrganizer = new URLOrganizer();
