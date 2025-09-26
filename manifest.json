@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "URL Organizer",
+  "name": "linkr - URL Organizer",
   "version": "1.0",
   "description": "Save and categorize URLs with an elegant interface",
   "permissions": [

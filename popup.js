@@ -53,6 +53,12 @@ class URLOrganizer {
                 this.openUrl(urlId, urlData.url);
             }
         });
+
+        // Add event listener for Linkr GitHub link
+        document.getElementById('linkrGithub').addEventListener('click', (e) => {
+            e.preventDefault();
+            this.openGithubRepository();
+        });
     }
 
     async loadSavedData() {
@@ -192,6 +198,11 @@ class URLOrganizer {
         }
 
         chrome.tabs.create({ url: url });
+    }
+
+    openGithubRepository() {
+        const githubUrl = 'https://github.com/sarankathiravan/Linkr_Chrome_extension';
+        chrome.tabs.create({ url: githubUrl });
     }
 
     filterUrls(searchTerm) {

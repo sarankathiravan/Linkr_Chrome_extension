@@ -166,3 +166,8 @@ chrome.runtime.onStartup.addListener(() => {
     // Clear and recreate context menus to avoid duplicates
     createContextMenus();
 });
+
+// Optional: Keep service worker alive during development (remove in production)
+// setInterval(() => {
+//     console.log('Service worker heartbeat');
+// }, 25000);

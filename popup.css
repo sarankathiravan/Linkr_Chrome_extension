@@ -492,9 +492,10 @@ section {
 
 .filter-select {
     height: 32px;
-    font-family: inherit;
+    font-family: 'montserrat';
     font-size: 12px;
     background: #111111;
+    color: #ffffff;
     border: 1px solid #222222;
 }
 
@@ -655,7 +656,7 @@ section {
     color: #ffffff;
     padding: 2px 6px;
     border-radius: 10px;
-    font-family: 'Geo', 'Segoe UI Semibold', 'Inter', 'Roboto Medium', system-ui, sans-serif;
+    font-family: 'jost', 'Segoe UI Semibold', 'Inter', 'Roboto Medium', system-ui, sans-serif;
     font-size: 9px;
     font-weight: 400;
     text-transform: capitalize;
@@ -693,12 +694,30 @@ section {
 }
 
 .footer-copyright {
-    font-family: inherit;
+    font-family: 'tahoma';
     font-size: 10px;
     font-weight: inherit;
     color: #666666;
     text-align: center;
     margin-top: 2px;
+}
+
+.linkr-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 1px 2px;
+    border-radius: 2px;
+}
+
+.linkr-link:hover {
+    color: #f0f0f0;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 .stat-value {
