@@ -4,13 +4,13 @@ A modern Chrome extension for saving and categorizing URLs with a sleek dark the
 
 ## Features
 
-- 🔖 **Save URLs**: Quickly save the current page or any URL
-- 📂 **Categorize**: Organize URLs into customizable categories
-- 🔍 **Search & Filter**: Find saved URLs easily
-- 📊 **Statistics**: Track your saved URLs and categories
-- 📤 **Export**: Export your URLs as JSON for backup
-- 🎨 **Modern Dark Theme**: Sleek black interface with textured gradients
-- ⚡ **Lightweight**: Minimal resource usage with smooth animations
+-  **Save URLs**: Quickly save the current page or any URL
+-  **Categorize**: Organize URLs into customizable categories
+-  **Search & Filter**: Find saved URLs easily
+-  **Statistics**: Track your saved URLs and categories
+-  **Export**: Export your URLs as JSON for backup
+-  **Modern Dark Theme**: Sleek black interface with textured gradients
+-  **Lightweight**: Minimal resource usage with smooth animations
 
 ## Installation
 
