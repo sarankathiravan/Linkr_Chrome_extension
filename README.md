@@ -198,9 +198,20 @@ We believe great software comes from great communities. Here's how you can help 
 4. Test thoroughly
 5. Submit a pull request
 
+Before contributing, please read our community and contribution docs:
+
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](./CONTRIBUTING.md)
+- [Security Policy](./SECURITY.md)
+
+If you're filing an issue, please use the templates provided to make your
+report easy to triage (bug reports, feature requests, and questions).
+
 ## 📜 License & Credits
 
 **MIT License** - Feel free to use, modify, and distribute
+
+See the full license in [LICENSE](./LICENSE)
 
 ### Developed by
 **[Saran Kathiravan](https://www.linkedin.com/in/saran-kathiravan17/)** - Full-stack developer passionate about creating tools that enhance productivity and user experience.
